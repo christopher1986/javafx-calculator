@@ -1,0 +1,25 @@
+.layout {
+    -fx-background-color: #393f3f;
+}
+
+.screen {
+    -fx-background-color: #292929;
+    -fx-border-width: 1px;
+    -fx-border-color: #1c1f1f;
+    -fx-text-fill: #fff;
+}
+
+.button {
+    -fx-border-width: 1px;
+    -fx-border-color: #1c1f1f;
+    -fx-background-color: linear-gradient(#343a3a 0%, #2a2f2f 100%);
+    -fx-text-fill: #fff;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#3b4242 0%, #2f3434 100%);
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(#232727 0%, #2d3232 100%);
+}
