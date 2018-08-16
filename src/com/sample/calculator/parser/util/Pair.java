@@ -42,4 +42,25 @@ public class Pair<K, V> {
     public V getValue() {
         return value;
     }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + getKey().hashCode();
+        result = 32 * result + getValue().hashCode();
+
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Pair)) {
+            return false;
+        }
+
+        Pair pair = (Pair) o;
+
+        return (getKey().equals(pair.getKey()) &&
+                getValue().equals(pair.getValue()));
+    }
 }

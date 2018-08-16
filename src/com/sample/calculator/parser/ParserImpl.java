@@ -76,6 +76,7 @@ public class ParserImpl implements Parser {
      * @param tokens The tokens to parse.
      * @param precedence the precedence of the previous operator.
      * @return The expression node that was parsed.
+     * @link https://www.engr.mun.ca/~theo/Misc/exp_parsing.htm#climbing
      */
     private ExpressionNode parseExpression(TokenStream<Token> tokens, int precedence) {
         ExpressionNode node = parsePrimary(tokens);
