@@ -15,7 +15,7 @@ public class Main extends Application
         Scene scene = new Scene(root);
         scene.getStylesheets().add("com/sample/calculator/resources/css/main.css");
 
-        primaryStage.setTitle("JavaFX project");
+        primaryStage.setTitle("JavaFX calculator");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

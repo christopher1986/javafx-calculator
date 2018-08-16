@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Numeric Expression Parser.iml" filepath="$PROJECT_DIR$/Numeric Expression Parser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javafx-calculator.iml" filepath="$PROJECT_DIR$/javafx-calculator.iml" />
     </modules>
   </component>
 </project>
