@@ -9,19 +9,23 @@ public class NumberNode implements ExpressionNode {
     /**
      * The numeric value this node represents.
      */
-    private double value;
+    private Double value;
 
     /**
      * Initialize a new NumberNode.
      *
      * @param value The numeric value.
      */
-    public NumberNode(double value) {
+    public NumberNode(Double value) {
         this.value = value;
     }
 
     @Override
     public BigDecimal evaluate() {
-        return new BigDecimal(value);
+        if (value % 1 == 0) {
+            return BigDecimal.valueOf(value.longValue());
+        }
+
+        return BigDecimal.valueOf(value);
     }
 }
