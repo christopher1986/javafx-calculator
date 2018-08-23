@@ -46,4 +46,24 @@ public class TokenImpl implements Token {
     public String getValue() {
         return value;
     }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + getType().hashCode();
+        result = 31 * result + getValue().hashCode();
+
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Token)) {
+            return false;
+        }
+
+        Token token = (Token) o;
+
+        return getType().equals(token.getType()) && getValue().equals(token.getValue());
+    }
 }

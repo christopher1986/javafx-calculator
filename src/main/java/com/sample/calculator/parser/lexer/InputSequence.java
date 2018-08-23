@@ -85,9 +85,15 @@ public class InputSequence implements CharSequence {
     @Override
     public CharSequence subSequence(int beginIndex, int endIndex) {
         int fromIndex = offset + beginIndex;
-        int toIndex = offset + endIndex;
+        int stopIndex = offset + endIndex;
 
-        return new String(Arrays.copyOfRange(value, fromIndex, toIndex));
+        if (stopIndex > value.length) {
+            throw new IndexOutOfBoundsException(String.format("Index out of range: %d", stopIndex));
+        } else if (stopIndex < fromIndex) {
+            throw new IndexOutOfBoundsException(String.format("Index out of range: %d", stopIndex - fromIndex));
+        }
+
+        return new String(Arrays.copyOfRange(value, fromIndex, stopIndex));
     }
 
     @Override
