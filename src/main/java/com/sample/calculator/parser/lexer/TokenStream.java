@@ -89,4 +89,21 @@ public interface TokenStream<E extends Token> {
      * @return The number of tokens in this stream.
      */
     int size();
+
+    /**
+     * Returns an array containing all of the tokens in this stream in proper sequence.
+     *
+     * @return an array containing the tokens of the stream.
+     */
+    Object[] toArray();
+
+    /**
+     * Returns an array containing all of the tokens in this stream in proper sequence.
+     *
+     * @param array the array into which the elements of the stream are to
+     *              be stored, if it is big enough; otherwise, a new array of the
+     *              same runtime type is allocated for this purpose.
+     * @return an array containing the tokens of the stream.
+     */
+    E[] toArray(E[] array);
 }

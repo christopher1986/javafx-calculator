@@ -31,7 +31,7 @@ public class ParenthesisCommand implements TokenizeCommand {
     private TokenStream<Token> tokens;
 
     /**
-     * Intialize a new NumberCommand.
+     * Initialize a new NumberCommand.
      *
      * @param tokens The collection to which tokens will be added.
      * @param balancer The balancer to ensure brackets are properly closed.

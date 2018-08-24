@@ -23,7 +23,7 @@ public class NumberCommand implements TokenizeCommand {
     private TokenStream<Token> tokens;
 
     /**
-     * Intialize a new NumberCommand.
+     * Initialize a new NumberCommand.
      *
      * @param tokens A collection to which tokens will be added.
      */

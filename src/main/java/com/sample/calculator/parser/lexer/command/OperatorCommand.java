@@ -25,7 +25,7 @@ public class OperatorCommand implements TokenizeCommand {
     private TokenStream<Token> tokens;
 
     /**
-     * Intialize a new NumberCommand.
+     * Initialize a new NumberCommand.
      *
      * @param tokens The collection to which tokens will be added.
      * @param operators A collection of binary operators to match.

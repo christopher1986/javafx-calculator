@@ -91,4 +91,20 @@ public class TokenStreamImpl<E extends Token> implements TokenStream<E> {
     public int size() {
         return tokens.size() - index;
     }
+
+    @Override
+    public Object[] toArray()
+    {
+        List<E> portion = tokens.subList(index, tokens.size());
+
+        return portion.toArray();
+    }
+
+    @Override
+    public E[] toArray(E[] array)
+    {
+        List<E> portion = tokens.subList(index, tokens.size());
+
+        return portion.toArray(array);
+    }
 }
