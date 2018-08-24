@@ -37,7 +37,7 @@ class LexerImplTest
     }
 
     @Test
-    void testTokenizeNumber()
+    void testTokenizeWholeNumbers()
     {
         TokenStream<Token> tokens = lexer.tokenize("2");
         Object[] received = tokens.toArray();
@@ -49,14 +49,45 @@ class LexerImplTest
     }
 
     @Test
+    void testTokenizeNegativeNumbers()
+    {
+        TokenStream<Token> tokens = lexer.tokenize("-2");
+        Object[] received = tokens.toArray();
+        Object[] expected = new Token[] {
+            new TokenImpl(Type.OPERATOR, "-"),
+            new TokenImpl(Type.NUMBER, "2")
+        };
+
+        assertTrue(Arrays.equals(expected, received));
+    }
+
+    @Test
+    void testTokenizeFractions()
+    {
+        TokenStream<Token> tokens = lexer.tokenize("2.0");
+        Object[] received = tokens.toArray();
+        Object[] expected = new Token[] {
+            new TokenImpl(Type.NUMBER, "2.0")
+        };
+
+        assertTrue(Arrays.equals(expected, received));
+    }
+
+    @Test
+    void testIllegalFractions()
+    {
+        assertThrows(SyntaxException.class, () -> { lexer.tokenize("2.1.3"); });
+    }
+
+    @Test
     void testTokenizeExpression()
     {
-        TokenStream<Token> tokens = lexer.tokenize("2+2");
+        TokenStream<Token> tokens = lexer.tokenize("2+2.8");
         Object[] received = tokens.toArray();
         Object[] expected = new Token[] {
             new TokenImpl(Type.NUMBER, "2"),
             new TokenImpl(Type.OPERATOR, "+"),
-            new TokenImpl(Type.NUMBER, "2")
+            new TokenImpl(Type.NUMBER, "2.8")
         };
 
         assertTrue(Arrays.equals(expected, received));
